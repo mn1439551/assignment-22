@@ -98,26 +98,18 @@ ON enrollments.course_id = courses.course_id;
 
 
 SELECT courses.course_name, students.student_name
-FROM courses RIGHT JOIN enrollments
+FROM courses INNER JOIN enrollments
 ON courses.course_id = enrollments.course_id
 RIGHT JOIN students
 ON enrollments.student_id = students.student_id;
 
-SELECT *
-FROM enrollments
-WHERE student_id = 5
-
-SELECT *
-FROM health_records
-WHERE student_id = 5;
-
+DELETE FROM departments
+WHERE dept_id = 3
 
 DELETE FROM students
-WHERE student_id = 5;
+WHERE student_id = 3;
 
-
-
-SELECT SUM(student_id) AS "Total number of students"
+SELECT COUNT(student_id) AS "Total number of students"
 FROM students;
 
 
